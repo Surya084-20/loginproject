@@ -1,0 +1,5 @@
+com\example\demo\repository\UserSignupRepository.class
+com\example\demo\WebConfig.class
+com\example\demo\controller\AuthController.class
+com\example\demo\model\UserSignup.class
+com\example\demo\SignupApplication.class
