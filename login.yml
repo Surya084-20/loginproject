@@ -3,10 +3,10 @@ name: pro
 on:
   push:
     branches: ["main"]
-  pull_request:  
+  pull_request:
     branches: ["main"]
- 
-jobs:            
+
+jobs:
   build:
     runs-on: windows-latest
 
@@ -17,13 +17,9 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '17'   
+          java-version: '17'
           distribution: 'temurin'
 
-      - name: Build with Maven
+      - name: Build and Test with Maven
         working-directory: pro
         run: mvn clean install
-
-      - name: Run Tests
-        working-directory: pro
-        run: mvn test
