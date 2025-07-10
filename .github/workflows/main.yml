@@ -1,0 +1,29 @@
+name: main
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:  
+    branches: ["main"]
+ 
+jobs:            
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source  
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'   
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        working-directory: main
+        run: mvn clean install
+
+      - name: Run Tests
+        working-directory: main
+        run: mvn test is there any changes
