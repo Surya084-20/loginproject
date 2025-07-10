@@ -1,4 +1,4 @@
-name: main
+name: pro
 
 on:
   push:
@@ -21,9 +21,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        working-directory: main
+        working-directory: pro
         run: mvn clean install
 
       - name: Run Tests
-        working-directory: main
+        working-directory: pro
         run: mvn test is there any changes
