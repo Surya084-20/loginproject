@@ -2,9 +2,9 @@ name: pro
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   pull_request:
-    branches: [main]
+    branches: ["main"]
 
 jobs:
   build:
@@ -21,7 +21,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
+        working-directory: pro
         run: mvn clean install
 
       - name: Run Tests
+        working-directory: pro
         run: mvn test
